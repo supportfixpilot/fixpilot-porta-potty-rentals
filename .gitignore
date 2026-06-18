@@ -1,0 +1,30 @@
+# Secrets — must never be committed
+groq_keys.txt
+*.json
+!.idea/*.json
+!package.json
+!package-lock.json
+!tailwind.config.json
+
+# Indexer state files
+submitted.txt
+indexed_urls.txt
+failed.txt
+removable_urls.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Tooling
+.wrangler/
+.DS_Store
+node_modules/
+
+# Editor
+.idea/workspace.xml
+
+# Build output (kept under source control: assets/tw.css will be committed once built)

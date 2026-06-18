@@ -1,0 +1,36 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# Higher-priority rules should appear FIRST.
+
+# --- Slug typo corrections (preserve any earned authority) ---
+/porta-potty-rental-new-work-city-ny     /porta-potty-rental-new-york-city-ny    301
+/porta-potty-rental-new-work-city-ny/    /porta-potty-rental-new-york-city-ny    301
+/porta-potty-rental-baton-brouge-la      /porta-potty-rental-baton-rouge-la      301
+/porta-potty-rental-baton-brouge-la/     /porta-potty-rental-baton-rouge-la      301
+
+# --- Promote the calculator out of /blog/ ---
+/blog/porta-potty-calculator     /calculator   301
+/blog/porta-potty-calculator/    /calculator   301
+
+# --- Consolidate duplicate cost/price guides ---
+/blog/porta-potty-rental-prices-2026     /blog/porta-potty-rental-costs-2026   301
+/blog/porta-potty-rental-prices-2026/    /blog/porta-potty-rental-costs-2026   301
+
+# --- Consolidate the overlapping luxury-tier service pages ---
+/services/fancy-portable-restroom-trailers-for-rent     /services/luxury-restroom-trailers   301
+/services/fancy-portable-restroom-trailers-for-rent/    /services/luxury-restroom-trailers   301
+
+# --- Legacy /locations/{slug}/ pattern from the old layout ---
+/locations/:slug/    /porta-potty-rental-:slug    301
+/locations/:slug     /porta-potty-rental-:slug    301
+
+# --- Canonical URL: strip trailing slash on service/blog pages ---
+# NOTE: city pages (/porta-potty-rental-:slug/) are intentionally excluded here.
+# Cloudflare Pages folder-index routing already handles both /slug and /slug/ for those,
+# and adding a strip rule creates an infinite 301 loop with CF's own trailing-slash redirect.
+/services/:slug/              /services/:slug              301
+/blog/:slug/                  /blog/:slug                  301
+
+# --- Strip .html extension from any direct-extension hits ---
+/services/:slug.html    /services/:slug    301
+/blog/:slug.html        /blog/:slug        301

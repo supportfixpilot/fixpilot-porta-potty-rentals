@@ -1,0 +1,10 @@
+# FixPilot Porta Potty Rentals - robots.txt
+# https://fixpilotportapottyrentals.com
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://fixpilotportapottyrentals.com/sitemap.xml

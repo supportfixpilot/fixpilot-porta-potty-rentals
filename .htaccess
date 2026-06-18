@@ -1,0 +1,7 @@
+# NOTE: this site is deployed to Cloudflare Pages, NOT Apache.
+# These directives DO NOT execute. Redirect/header logic lives in:
+#   - /_redirects                (Cloudflare Pages redirects)
+#   - Cloudflare dashboard        (cache rules, security headers)
+# Kept here for historical reference only.
+
+Options -Indexes
